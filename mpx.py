@@ -40,7 +40,7 @@ MAX_DIST = 3000
 
 class Mpx:
 
-    def __init__(self, nb_sensors, sensor_address=0x29, expander_address=0x20, refresh=0.1, debug=False):
+    def __init__(self, nb_sensors, sensor_address=0x27, expander_address=0x20, refresh=0.1, debug=False):
         self.coef = 255 / (MAX_DIST / 2)
 
         # Init I2C bus
