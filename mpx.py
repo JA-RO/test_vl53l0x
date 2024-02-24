@@ -64,6 +64,7 @@ class Mpx:
     def init_sensors(self, sensors_address):
 
         # Put all XSHUT pins to LOW
+        print("in init_sensor")
         for i in range(0, self.nb_sensors):
             self.mcp.get_pin(i).switch_to_output()
             self.mcp.get_pin(i).value = False
