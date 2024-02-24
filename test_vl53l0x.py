@@ -20,7 +20,7 @@ vl53 = adafruit_vl53l0x.VL53L0X(i2c)
 #     except RuntimeError as e:
 #         print("Error:", e)
 
-mpx = Mpx(5)
+mpx = Mpx(3)
 
 while True:
     scan = mpx.get_scan()

@@ -56,7 +56,7 @@ class Mpx:
         self.debug = debug
 
         # Init all sensors
-        #self.init_sensors(sensor_address)
+        self.init_sensors(sensor_address)
 
         self.lock = Lock()
         Thread(target=self.loop).start()
