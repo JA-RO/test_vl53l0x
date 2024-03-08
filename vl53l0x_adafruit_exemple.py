@@ -26,18 +26,21 @@ import board
 from digitalio import DigitalInOut
 from adafruit_vl53l0x import VL53L0X
 
+print("running adafruit exemple: initialisation")
 # declare the singleton variable for the default I2C bus
 i2c = board.I2C()  # uses board.SCL and board.SDA
 # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 
 # declare the digital output pins connected to the "SHDN" pin on each VL53L0X sensor
+print("running adafruit exemple: xshut")
 xshut = [
     DigitalInOut(board.D17),
     DigitalInOut(board.D18),
     # add more VL53L0X sensors by defining their SHDN pins here
 ]
-
+print("running adafruit exemple: " + str(xshut))
 for power_pin in xshut:
+    print("running adafruit exemple: in powerpin loop")
     # make sure these pins are a digital output, not a digital input
     power_pin.switch_to_output(value=False)
     # These pins are active when Low, meaning:
@@ -50,6 +53,7 @@ vl53 = []
 
 # now change the addresses of the VL53L0X sensors
 for i, power_pin in enumerate(xshut):
+    print("running adafruit exemple: loop 2")
     # turn on the VL53L0X to allow hardware check
     power_pin.value = True
     # instantiate the VL53L0X sensor on the I2C bus & insert it into the "vl53" list
@@ -96,7 +100,7 @@ def stop_continuous():
 
 
 if __name__ == "__main__":
-    print("running adafruit exemple")
+    print("running adafruit exemple: ifMain")
     detect_range()
     stop_continuous()
 else:
