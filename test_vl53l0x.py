@@ -24,11 +24,8 @@ from vl53l0x_adafruit_exemple import *
 mpx = Mpx(3)
 
 while True:
-    #scan = mpx.get_scan()
-    #print("---- New scan -----")
-    #for i in range(len(scan)):
-        #print("%d: %f" % (i + 1, scan[i]))
-    #sleep(1)
-
-    detect_range()
-    stop_continuous()
+    scan = mpx.get_scan()
+    print("---- New scan -----")
+    for i in range(len(scan)):
+        print("%d: %f" % (i + 1, scan[i]))
+    sleep(1)
