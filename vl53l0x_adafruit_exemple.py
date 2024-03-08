@@ -23,12 +23,13 @@ need to wait 400ms, just 200ms for both of the sensors.
 """
 import time
 import board
+import busio
 from digitalio import DigitalInOut
 from adafruit_vl53l0x import VL53L0X
 
 print("running adafruit exemple: initialisation")
 # declare the singleton variable for the default I2C bus
-i2c = board.I2C()  # uses board.SCL and board.SDA
+i2c = busio.I2C(board.SCL, board.SDA) #board.I2C()  # uses board.SCL and board.SDA
 # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 
 # declare the digital output pins connected to the "SHDN" pin on each VL53L0X sensor
