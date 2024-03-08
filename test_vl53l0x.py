@@ -4,6 +4,7 @@ import busio
 import adafruit_vl53l0x
 from mpx import Mpx
 from time import sleep
+from vl53l0x_adafruit_exemple import *
 
 # # Create I2C bus
 # i2c = busio.I2C(board.SCL, board.SDA)
@@ -23,8 +24,11 @@ from time import sleep
 mpx = Mpx(3)
 
 while True:
-    scan = mpx.get_scan()
-    print("---- New scan -----")
-    for i in range(len(scan)):
-        print("%d: %f" % (i + 1, scan[i]))
-    sleep(1)
+    #scan = mpx.get_scan()
+    #print("---- New scan -----")
+    #for i in range(len(scan)):
+        #print("%d: %f" % (i + 1, scan[i]))
+    #sleep(1)
+
+    detect_range()
+    stop_continuous()
