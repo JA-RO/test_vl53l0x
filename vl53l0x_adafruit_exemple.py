@@ -96,6 +96,7 @@ def stop_continuous():
 
 
 if __name__ == "__main__":
+    print("running adafruit exemple")
     detect_range()
     stop_continuous()
 else:
